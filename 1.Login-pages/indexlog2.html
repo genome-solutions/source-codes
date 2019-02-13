@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login Page-2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="html, css, loginpages">
+    <meta name="description" content="Login Page of a website">
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+   
+    <style>
+      * {box-sizing:border-box;}
+      
+      body {
+        background: #f7f7f7;
+        font-family: 'Actor';
+        font-size: 15px;
+        margin:0%;
+      }
+      .container {
+        margin: auto;
+        width: 400px;
+
+        position: relative;
+        left:0;
+        top: 100px;
+      }
+      
+      .containerA {margin-bottom:25px; padding: 0 25px;}
+            .containerA img {height: 65px; width:347px;}
+      
+      .containerB {
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 4px; 
+        box-shadow: 0.2px 0.1px 1px 0.1px rgb(180,180,180);
+        margin-bottom: 17px;
+        padding: 30px 23px 10px;
+        width: 100%;
+      }
+      
+        .font {margin-bottom: 2px; opacity:0.45;}
+        .containerB input[type=text], input[type=password] {
+          background: rgba(190, 190, 190, 0.1);
+          background-color: #fcfcfc;
+          border: 2px solid #f2f2f2;
+          border-radius: 3px; 
+          margin-bottom: 15px;  
+          padding: 8px;
+          width:100%;
+        }
+        .remember input[type=checkbox] {
+          cursor: pointer;
+          height: 13px;
+          width: 13px;
+        }
+      
+        input[type=text]:focus, input[type=password]:focus {background-color: #ddd;outline: none;}
+      
+        .remember {
+          font-size: 14px;
+          height: 5%;
+          margin: -1px 0 6px;
+          position: relative;
+        }
+          .remember-me {
+            position: absolute;
+            left:20px;
+            top: 0;
+            text-decoration: none;
+          }
+          button {
+            background-color: #2b8dbf;
+            border: 0px solid #f3f3f3;
+            border-radius: 4px; 
+            color:white;
+            cursor:pointer;
+            float:right;
+            font-weight: 900;
+            padding: 7px;
+            width:18%;
+         }
+           button:hover {opacity:0.8;}
+      
+      .containerC {font-size: 13px; font-weight: 400; padding-left:25px;}
+        .lost, .back-to {margin-bottom: 15px;}
+        .containerC a {
+          color:#2b8dba;
+          margin: 10px 0 20px;
+          text-decoration: underline;
+        }
+      @media screen and (max-width: 600px){
+        .container{width:100%;}
+      }s
+      @media screen and (max-hight: 200px){
+        .container{height:100%;}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="actionpage">
+        <div class="containerA">
+          <img src="logo.png" alt="logo">
+        </div> <!--EO containerA-->
+        
+        <div class="containerB">
+          <div class="row font"><label for="uname">Username</label></div>
+          <input type="text" id="uname" name="username" minlength="7" maxlength="20" autofocus required>
+        
+          <div class="row font"> <label for="password">Password</label></div>
+          <input type="password" id="password" name="password" minlength="6" maxlength="15" required>
+        
+          <div class="row remember">
+            <span class=" row"><input type="checkbox" id="check" name="checkboxstatus" required checked></span><span class="font remember-me row">Remember Me</span> 
+            <a href="submitpage"> <button>Log In</button></a>
+          </div>
+        </div><!--EO containerB-->
+        
+        <div class="containerC">
+          <div class="lost"><a href="password_retrieve_page">Lost your password?</a></div>
+          <div class="back-to"><a href="password_retrieve_page"> &larr; Back to WordPress Site</a></div>
+        </div><!--EO containerC-->
+      </form>
+    </div>
+    
+  </body>
+</html>

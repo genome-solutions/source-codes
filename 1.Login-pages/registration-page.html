@@ -1,0 +1,179 @@
+<html lang="en">
+  <head>
+    <title>Regitration Page</title>
+    
+    <meta nam="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="html, css, loginpages">
+    <meta name="description" content="Resgistration page">
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #d9eeff;
+        font: 15px 'Actor';
+        line-height: 13px;
+        margin:0;
+      }
+      
+      .container {
+        background-color: #d9eeff;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        margin-left:28%;
+        opacity: 0.7;
+        padding:30px;
+        position:relative;
+        top: 50px;
+        width:50%;
+      }
+
+       .row {
+         height: 10%;
+         margin-bottom:10px;
+         padding-left: 4%;
+         width:100%;
+        }
+      .colL {
+        float:left;
+        height: 100%;
+        margin-right: -30px;
+        padding: 20px 0;
+        width:40%;
+      }
+        #gender {padding-top: 10px;}
+      .colR {
+        float:right;
+        height: 60%;
+        margin: 10px 50px 10px 0;
+        width:50%;
+      }
+        .colRchild {margin-right: 10px;}
+      .row:after {clear:both; content: ""; display: table;}
+      
+      input[type=text], input[type=password], input[type=email] {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        height:100%;
+        padding-left:8px;
+        width: 90%;
+      }
+      input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {background-color: #DBDDE7;}
+      label {display: inline-block; height: 100%; width: 100%;}
+      button {
+        background-color: #0a53bd;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        margin-left:10px;
+        padding: 10px 20px;
+        position: absolute;
+        right:80px;
+      }
+        button:hover {opacity:0.8;}
+      
+      input[type=checkbox] {
+         position: relative;
+         height:14px;
+         top: 2px;
+         width: 14px;
+        }
+          input[type=checkbox]:hover {cursor: pointer;}
+      
+      .terms {margin-top:-10px; position: relative;}
+          .terms a { color: #111; text-decoration: none;}
+              .terms a:hover {color: blue; text-decoration: underline; }
+     
+     @media screen and (max-width: 600px) {
+        .colL, .colR,.container {margin-top: 0px; width:90%;}
+        .button {margin-top: 10px;}
+        input[type=text] {margin-bottom: 5px;}
+      }
+    </style>
+  </head>
+  <body>
+   <div class="container">
+      <form action="form_submission_page">
+        
+        <div class="row">
+            <div class="colL">
+                <label for="username">User Name</label>
+            </div>
+            <div class="colR">
+                <input type="text" name="username" id="username" minlength="6" maxlength="20" autofocus required>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="colL">
+                <label for="firstname">First Name</label>
+            </div>
+            <div class="colR">
+                <input type="text" name="firstname" id="firstname" minlength="3" maxlength="20" required>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="colL">
+                <label for="lastname">Last Name</label>
+            </div>
+            <div class="colR">
+                <input type="text" name="lastname" id="lastname" minlength="3" maxlength="20">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="colL">
+                <label for="password">Password</label>
+            </div>
+            <div class="colR">
+                <input type="password" name="password" id="password" minlength="6" maxlength="15" required>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="colL">
+                <label for="confirmpassword">Confirm Password</label>
+            </div>
+            <div class="colR">
+                <input type="password" name="confirmpassword" id="confirmpassword" minlength="6" maxlength="15" required>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="colL">
+                <label for="email">Email</label>
+            </div>
+            <div class="colR">
+                <input type="email" name="email" id="email" minlength="7" maxlength="20" required>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="colL" id="gender">
+                Gender
+            </div>
+            <div class="colR">
+                <span class="colRchild">
+                <input type="radio" name="gender" id="male" required>
+                <span>Male</span>
+                </span>
+
+                <span class="colRchild">
+                <input type="radio" name="gender" id="female">
+                <span>Female</span>
+                </span>
+            </div>
+        </div>
+        
+        <div class="row terms">
+          <input type="checkbox" name="checkboxvalue" id="Terms" required="" checked="">
+          I accept the <a href="#terms">Terms</a> and <a href="#conditions">Conditions</a> <button>Register</button>
+        </div>
+          
+      </form>
+    </div>
+  </body>
+</html>

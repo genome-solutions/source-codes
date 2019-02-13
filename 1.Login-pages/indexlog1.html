@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login Page-1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="html, css, loginpages">
+        <meta name="description" content="Login Page of a website">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+             .container {
+                background-color: white;
+                border: 1px solid #b8b8b8;
+                border-radius: 5px;
+                box-shadow: 0px 3px 15px 1px rgb(120,120,120);
+                height: 370px;
+                margin: auto;
+                width: 590px;
+                padding:0px;
+                
+                position: relative;
+                left: 0px;
+                top: 150px;
+              }
+                .row {margin-bottom: 5px; padding: 0 35px;}
+                .cross{float: right; margin: 15px 13px 0 0; opacity:0.9;}
+                
+                div i {color: #cccccc; font-size: 10px;}
+        
+                  .login {
+                    clear:both;
+                    font-size: 35px;
+                    margin: 0 0 20px 0;
+                    text-align: center;
+                  }
+                
+                  hr {border: 0.6px solid #e5e5e5; margin: 15px 0 19px 0;}
+
+                  .cred {margin: 0px 0px 15px 0px; font-size: 18px;}
+                      input[type=email], input[type=password] {
+                        border: 1px solid rgb(180, 180, 180);
+                        border-radius: 5px;
+                        height: 40px;
+                        padding: 0 15px;
+                        width: 100%;
+                      } 
+
+                      input[type=email]:focus, input[type=password]:focus {background-color: #DBDDE7;}
+
+                .signin {margin: 0px 0px 1px 0px; width:100%;} 
+                  .signin button { 
+                    background-color: #428bca;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer; 
+                    font-weight: 600;
+                    font-size: 17px;
+                    height: 40px;
+                    width: 100%;
+                  }
+                    .signin:hover {opacity:0.9;}
+
+                  .help {
+                    font-size: 15px;
+                    left: 0px;
+                    margin: 0 0 35px;
+                    position: relative;
+                    padding-left: 30px;
+                    width: 100%;
+                  }
+                
+                #needhelp {position: absolute; left: 35px;}
+        
+                  #register {
+                    padding-right: 20px;
+                    position: absolute;
+                    right: 15px;
+                    margin-bottom: 20px;
+                  }
+                
+                  .cancel {
+                    height: 40px;
+                    margin: 0;
+                    padding: 0 35px;
+                    width:100%;
+                  }
+                  .cancel button {
+                    background-color: #f1f1f1;
+                    border: 1px solid #f1f1f1;
+                    border-radius: 4px;
+                    color: #111;
+                    float: right;
+                    height: 35px;
+                    padding: 0;
+                    width: 70px;
+                  }
+            @media all (min-width: 300px) {
+                .container{width: 100%;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form action="action_page">
+                <div class="cross">
+                    <a href="closing_page.html"><i class="glyphicon glyphicon-remove"  style="font-size:11px"></i></a>
+                </div>
+                        
+                <div class="row login">
+                    <span id="#login-text">Login</span>
+                </div>  
+                <hr> 
+                <div class="row cred">
+                    <input type="email" name="email" id="email" minlength="7" maxlength="20" placeholder="Email" pattern="[A-za-z@1-9]" autofocus required >
+                </div>
+                
+                <div class="row cred">
+                    <input type="password" name="password" id="password" minlength="6" maxlength="15" placeholder="Password" required>
+                </div>
+                
+                <div class="row signin">
+                    <button name="signin" id="signin">Sign In</button>
+                </div>
+                
+                <div class="row help">
+                        <a href="#needhelp_page" id="needhelp">Need help? </a>
+                        <a href="reg_form.html" id="register">Register</a>
+                </div>
+                
+                <div class="row cancel">
+                        <button name="cancel" id="cancel" >Cancel</button>
+                    </div>
+            </form>
+        </div>
+    </body>
+</html>

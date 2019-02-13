@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Navigation Menu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="html, css">
+    <meta name="description" content="Horizantal Navigation menu">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <style>
+        body, div {border: 0; margin: 0; padding: 0; }
+        body{background-color: #343447;}
+        .container {
+            align-content: center;
+            display: flex;
+            margin: 220px 0 0 250px;
+            position:relative;
+            width:900px;
+        }
+            .item {background-color: blue; height: 112px; margin-right: 18px; width: 115px;}
+                .item i {color: white; font-size:70px; margin: 20px 16px;}
+
+                .item1 {background-color: #30b2fd; padding-left: 5px;}
+                .item2 {background-color: #00edd1; padding-left: 15px; width: 108px;}
+                .item3 {background-color: #ffa157; padding-left: 8px; width: 108px;}
+                .item4 {background-color: #ff7383;}
+                            
+            .itemdisp {display: none; position: absolute;}
+            
+            .item:hover .itemdisp{
+                display: block;
+                font: 55px sans-serif;
+                left:580px;
+                top: 20px;
+            }
+            
+            .item1:hover .itemdisp1 {color: #30b2fd;}
+            .item2:hover .itemdisp2 {color: #00edd2;}
+            .item3:hover .itemdisp3 {color: #ffa157;}
+            .item4:hover .itemdisp4 {color: #ff7383;}
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <div class="item item1">
+            <div><a href="#home.html"><i class='fas fa-home' ></i></a></div>
+            <div class="itemdisp itemdisp1">Home</div>
+        </div>
+        <div class="item item2">
+            <div><a href="#about.html"><i class='usericon fas fa-user'></i></a></div>
+            <div class="itemdisp itemdisp2">About</div>
+        </div>
+        <div class="item item3">
+            <div><a href="#portfolio.html"><i class='far fa-image' ></i></a></div>
+            <div class="itemdisp itemdisp3">Portfolio</div>
+        </div>
+        <div class="item item4">
+            <div><a href="#contact.html"><i class='fab fa-rocketchat'></i></a></div>
+            <div class="itemdisp itemdisp4">Contact</div>
+        </div>
+    </div>
+
+  </body>
+</html>
+
