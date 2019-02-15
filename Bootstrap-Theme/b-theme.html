@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Header Resp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="b-theme.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+</head>
+<body >
+
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid navbar-container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#showlist">
+        <span class="glyphicon glyphicon-list" ></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="h-logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="showlist">
+      <ul class="nav navbar-nav ul1">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Docs</a></li>
+        <li class="hi"><a href="#">Notification</a></li>
+        <li class="hi"><a href="#">Growl</a></li>
+        <li class="hi"><a href="#">Logout</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right ul2">
+        <li id="searchbox"><input type="text" name="searchvalue" class="form-control"  placeholder="Search" title="Search" ></li>
+        <li id="bell">
+          <a href="#" ><span class="glyphicon glyphicon-bell" id="bellicon"></span> </a>
+        </li>
+        <li id="pic">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img src="h-avatar.png" class="img-circle"></button>
+          <ul class="dropdown-menu ul3">
+            <li><a href="#">Growl</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid main-container-fluid">
+  <div class="row">
+
+    <div class="col-md-3 ">
+      <div class="sidebar l-sidebar ">
+        <div class="l-item1 panel panel-default">
+          <div class="l-item-1-bg"><img src="m-item-photo1.jpg"></div>
+          <div class="l-item1-descr">
+            <div class="text-center"><img src="h-avatar.png" id="img-scr-1" class="img-circle img-thumbnail"></div>
+            <div class="text-center about-me">
+              <h5><b>Dave Gamache</b></h5>
+              <p>I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+            </div>
+            <ul class="list-inline text-center list-inline-frds">
+              <li id="friends">Friends <br><b>12M</b></li>
+              <li id="enemies">Enemies <br><b>1</b></li>
+            </ul>
+          </div>
+        </div>
+        <div class="l-item l-item2 panel panel-default">
+          <div class="l-item-c item-hd" ><b>About</b> - <a href="#">Edit</a></div>
+          <ul class="l-item-c" id="about-list"  >
+            <li id=""><span class="far fa-calendar" id="l-item-c-li-icon"></span> Went to <a href="#">Oh, Canada</a></li>
+            <li id=""><span class="fas fa-user-friends" id="l-item-c-li-icon"></span>Became friends with <a href="#">Obama</a></li>
+            <li id=""><span class="fab fa-github-alt" id="l-item-c-li-icon"></span> Worked at <a href="#">Github</a></li>
+            <li id=""><span class="glyphicon glyphicon-home" id="l-item-c-li-icon"></span> Lives in <a href="#">San Francisco, CA</a></li>
+            <li id=""><span class="glyphicon glyphicon-map-marker" id="l-item-c-li-icon"></span> From <a href="#">Seattle, WA</a></li>
+          </ul>
+        </div>
+        
+        <div class="l-item l-item3 panel panel-default">
+          <div class="l-item-c item-hd"><b>Photos</b> <a href="#"> - Edit</a></div>
+          <div class="l-item-c l-item3-photos ">
+              <div class="list-inline l-li l-li1">
+                <a href="#"><img src="instagram_5.jpg" id="img1"></a>
+                <a href="#"><img src="instagram_6.jpg" id="img2"></a>
+              </div>
+    
+              <div class="list-inline l-li l-li2">
+                <a href="#"><img src="instagram_7.jpg" id="img1"></a>
+                <a href="#"><img src="instagram_8.jpg" id="img2"></a>
+              </div>
+    
+              <div class="list-inline l-li l-li3">
+                <a href="#"><img src="instagram_9.jpg" id="img1"></a>
+                <a href="#"><img src="instagram_10.jpg" id="img2"></a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--mid bar start-->
+    <div class="col-md-6 ">
+      <div class="midbar ">
+
+        <div class="m-item m-search m-item1 panel panel-default">
+         <form>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Message">
+            <div class="input-group-btn">
+              <button class="btn btn-default btn-block" type="button">
+                <i class="glyphicon glyphicon-camera"></i>
+              </button>
+            </div>
+          </div>
+         </form>
+        </div>
+
+        <div class="m-item m-descr m-item2 panel panel-default" >
+          <div class="media">
+            <div class="media-left">
+              <img src="h-avatar.png" class="meadia-object img-circle img-cir">
+            </div>
+            <div class="media-body">
+              <div class="media-heading"><b>Dave Gamache</b></div>
+              <p id="gamache">Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            
+              <div class="m-item2-photos">
+                <img src="m-item-photo1.jpg" id="mi-1">
+                <img src="m-item-photo2.jpg" id="mi-2">
+                <img src="m-item-photo3.jpg" id="mi-3">
+                <img src="m-item-photo4.jpg" id="mi-4">
+              </div>
+
+              <div class="media">
+                <div class="media-left">
+                  <img src="jacon.jpg" class="meadia-object img-circle img-cir-s">
+                </div>
+                <div class="media-body">
+                  <p><b>Jacob Thornton:</b> Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.</p>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <img src="mark.png" class="meadia-object img-circle img-cir-s" >
+                </div>
+                <div class="media-body">
+                  <p><b>Mark Otto:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                </div>
+              </div>
+            </div><!--MEDIA BODY-->
+          </div>
+        </div><!--EO m-item2-->
+
+        <div class="m-item m-item3 panel panel-default">
+          <div class="media">
+            <div class="media-left">
+              <img src="jacon.jpg" class="meadia-object img-circle img-cir">
+            </div>
+            <div class="media-body">
+              <div class="media-heading"><b>Jacob Thronton</b></div>
+              <p>Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="m-item m-item4 panel panel-default">
+          <div class="media">
+              <div class="media-left">
+                <img src="mark.png" class="meadia-object img-circle img-cir" >
+              </div>
+              <div class="media-body">
+                <div class="media-heading"><b>Mark Otto</b></div>
+                <p id="mark"> Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <div class="m-item4-photos">
+                    <img src="sdfs.jpg" id="m-4">
+                </div>
+
+                <div class="media">
+                  <div class="media-left">
+                    <img src="h-avatar.png" class="meadia-object img-circle img-cir-s">
+                  </div>
+                  <div class="media-body">
+                    <p id="gamache-rvw"><b>Dave Gamache:</b> Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+    <!--Right Side Bar-->
+    <div class="col-md-3 ">
+      <div class="sidebar r-sidebar">
+        
+        <div class="r-item r-item1 panel panel-default">
+          <div lass="r-item-c"><h5 id="r-item-hd1"><b>Sponsored</b></h5></div>
+          <div class="r-item-c pic">
+            <img src="light-hose.jpg" id="lh">
+          </div>
+          <div class="r-item-c item-p">
+              <b>It might be time to visit Iceland.</b><br>Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?
+          </div>
+          <div class="r-item-c item-btn">
+            <button class="btn btn-default btn-sm buy-ticket-bt">
+              Buy a Ticket
+            </button>
+          </div>
+        </div>
+
+        <div class="r-item r-item2 panel panel-default">
+            <div class="r-item-c item-p2"><b>Likes .</b><a href="#"> View All</a></div>
+            <div class="r-item-c">
+                <div class="media jacob">
+                  <div class="media-left ">
+                    <img src="jacon.jpg" class="meadia-object img-circle img-cir">
+                  </div>
+                  <div class="media-body">
+                    <p class="jacob">
+                      <b>Jacob Thronton </b>@fat
+                      <button class="btn btn-default btn-sm follow-bt">
+                          <i class="fas fa-user-plus"></i> Follow
+                      </button>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="media mark-media">
+                  <div class="media-left">
+                    <img src="mark.png" class="meadia-object img-circle img-cir ">
+                  </div>
+                  <div class="media-body">
+                    <p>
+                      <b>Mark Otto </b>@mdo
+                      <button class="btn btn-default btn-sm follow-bt">
+                          <i class="fas fa-user-plus"></i> Follow
+                      </button>
+                    </p>
+                  </div>
+                </div>
+            </div>
+        </div><!--EO r-item2-->
+
+        <div class="r-item r-item2-a panel panel-default " >
+            Dave really likes these nerds, no one knows why though.
+        </div>
+
+        <div class="r-item r-item3 panel panel-default">
+            © 2018 Bootstrap <a href="#">About  </a>    <a href="#">Help </a>   <a href="#">Terms </a> 
+            <a href="#">Privacy </a>   <a href="#">Cookies </a>   <a href="#">Ads </a>
+            <a href="#">Info </a>   <a href="#">Brand </a>   <a href="#">Jobs </a>  <a href="#">Advertise </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
