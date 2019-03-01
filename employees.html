@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee JSON</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <script>
+        var _getUrl = "http://dummy.restapiexample.com/api/v1/employees", _myObj;
+        
+        //XMLHTTPRequest function
+        function showDetails() {
+           var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function () {
+               if(xhr.readyState == 4 && xhr.status == 200){
+                  _myObj = JSON.parse(xhr.responseText);
+               }
+           }
+           xhr.open("GET", _getUrl, true);
+           xhr.send();
+        }
+
+        //First 100 Employees of age 23
+        function showAge() {
+            var c=0, nArr = [];
+            for(let i in _myObj){
+              if(c==100){
+                break;
+              } else {
+                  if(_myObj[i].employee_age == 23){
+                    c++;
+                    nArr.push(_myObj[i])
+                  }
+              }
+              document.getElementById("disp").innerHTML = "<br> <b>First 100 employees of age 23: </b><br>" + JSON.stringify(nArr)
+           }
+        }
+
+        //Number of Employees with specific age
+        function showLength() {
+          var ageArr = [], tObj = {}, temp = "";
+          _myObj.map((x) => {
+            ageArr.push(x.employee_age)
+          })
+          ageArr.sort((a,b) => a-b).map((x) => {tObj[x] ? tObj[x] = tObj[x] + 1 : tObj[x] = 1})
+          for(let k in tObj){
+            temp += k +" : "+tObj[k] + "<br>"
+          }
+          document.getElementById("disp").innerHTML = "<br>  <b>Length of Ages <br>Age: Number of Eployees </b><br>" + temp
+        }
+
+        // Employees ages less than entered age
+        function showChild() {
+          var empAge = document.getElementById("age").value;
+          var ageArr = [];
+          
+          if(empAge == ""){
+            document.getElementById("disp").innerHTML = " <b>Please enter some age </b>"
+          }
+          else{
+            _myObj.map((x) => {
+              if(x.employee_age < parseInt(empAge)){
+                ageArr.push(JSON.stringify(x))
+              }
+            })
+
+            document.getElementById("disp").innerHTML = "<br> <b>Employees less than</b> " + empAge + " <b>years old: Total</b> "+ageArr.length+" <b>Employees</b> <br>" + ageArr
+          }
+        }
+     </script>
+</head>
+<body onload = "showDetails()">
+    <h2>Employees</h2>
+    <button type = "button" name= "name" class = "btn btn-primary" onclick = "showAge()" >Show Details of Employees of age 23</button>
+    <button type = "button" name= "name" class = "btn btn-primary" onclick = "showLength()" >Age frequency</button>
+    <input type =  "text" id = "age" name = "ENter the age and find Employees Less than entered age" placeholder="Enter Employee age ">
+    <button type = "button" name= "name" class = "btn btn-primary" onclick = "showChild()" >Click here</button>
+    <div id = "disp"></div>
+</body>
+</html>
