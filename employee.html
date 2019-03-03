@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body onload = "showDetails()">
+    <h3>Employees</h3>
+    <p>Pleae click the following buttons to get required details of Employees</p>
+    <button type = "button" name= "allEmoloyees" class = "btn btn-primary" onclick = "showAll()" >All</button>
+    <button type = "button" name= "age23" class = "btn btn-primary" onclick = "showAge()" >Show Details of Employees of age 23</button>
+    <button type = "button" name= "ageFrequency" class = "btn btn-primary" onclick = "showLength()" >Age frequency</button>
+    <input type =  "text" id = "age" name = "ENter the age and find Employees Less than entered age" placeholder="Enter Employee age ">
+    <button type = "button" name= "click" class = "btn btn-primary" onclick = "showChild()" >Click here</button>
+    <div id = "disp"></div>
+
+    <script>
+        var _getUrl = "http://dummy.restapiexample.com/api/v1/employees", _myObj;
+        
+        //XMLHTTPRequest function
+        function showDetails() {
+           var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function () {
+               if(xhr.readyState == 4 && xhr.status == 200){
+                  _myObj = JSON.parse(xhr.responseText);
+               }
+           }
+           xhr.open("GET", _getUrl, true);
+           xhr.send();
+        }
+        
+        //All Employees  
+        function showAll(){
+            var tbleAll=""
+            tbleAll += "<table border = '1'>"
+            _myObj.map((x) => {
+            tbleAll += "<tr><td>"+x.id+"</td>" + "<td>"+x.employee_name+"</td>" + "<td>"+x.employee_salary+"</td>" + "<td>"+x.employee_age+"</td>" +"<td>"+x.profile_image+"</td></tr>"    
+            })
+            tbleAll+="</table>"
+            document.getElementById("disp").innerHTML = "<br> <b>All Employees: </b><br>" + tbleAll
+        }
+        //End of All Employees
+  
+        //First 100 Employees of age 23
+        function showAge() {
+            var c=0, nArr = [];
+            for(let i in _myObj){
+              if(c==100){
+                break;
+              } else {
+                  if(_myObj[i].employee_age == 23){
+                    c++;
+                    nArr.push(_myObj[i])
+                  }
+              }
+            }
+           document.getElementById("disp").innerHTML = "<br> <b>First 100 employees of age 23: </b><br>" + JSON.stringify(nArr)
+        }
+
+        //Number of Employees with specific age
+        function showLength() {
+          var ageArr = [], tObj = {}, temp = "";
+          _myObj.map((x) => {
+            ageArr.push(x.employee_age)
+          })
+          ageArr.sort((a,b) => a-b).map((x) => {tObj[x] ? tObj[x] = tObj[x] + 1 : tObj[x] = 1})
+          for(let k in tObj){
+            temp += k +" years old : "+tObj[k] + " Employees<br>"
+          }
+          document.getElementById("disp").innerHTML = "<br>  <b>Number of Employees with specific age<br>Age: Number of Eployees </b><br>" + temp
+        }
+
+        // Employees ages less than entered age
+        function showChild() {
+          var empAge = document.getElementById("age").value;
+          var ageArr = [];
+          
+          if(empAge == ""){
+            document.getElementById("disp").innerHTML = " <b>Please enter some age </b>"
+          }
+          else{
+            _myObj.map((x) => {
+              if(x.employee_age < parseInt(empAge)){
+                ageArr.push(JSON.stringify(x))
+              }
+            })
+
+            document.getElementById("disp").innerHTML = "<br> <b>Employees less than</b> <b>" + empAge + "</b> <b>years old: Total</b> <b>"+ageArr.length+"</b> <b>Employees</b> <br>" + ageArr
+          }
+        }
+     </script>
+</body>
+</html>
